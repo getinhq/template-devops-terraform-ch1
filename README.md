@@ -1,6 +1,12 @@
 # Terraform S3 bucket
 
-Provision an S3 bucket and public-read policy (use with care; destroy when done).
+## Task
+Use Terraform to create an S3 bucket and configure it for static website or public-read access as described in class materials (use responsibly; destroy when done).
 
-## CI
-`terraform fmt -check` and `terraform validate` (without apply).
+## Starter (not finished)
+`main.tf` only has a placeholder. Replace with real `aws_s3_bucket` (and policies) before merge.
+
+## Your work
+- Add provider, bucket, and access settings.
+- `terraform fmt`, `terraform validate` (no apply in CI).
+- Apply locally only with your AWS credentials if instructed.

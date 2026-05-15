@@ -13,3 +13,5 @@ jobs:
       - run: terraform fmt -check -recursive
       - run: terraform init -backend=false
       - run: terraform validate
+      - name: Require S3 bucket resource
+        run: grep -q "aws_s3_bucket" main.tf || (echo "Add aws_s3_bucket to main.tf" && exit 1)

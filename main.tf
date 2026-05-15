@@ -1,6 +1,20 @@
 terraform {
   required_version = ">= 1.4.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
-# Baseline placeholder — replace with AWS S3 resources per challenge README.
-resource "terraform_data" "placeholder" {}
+provider "aws" {
+  region = var.aws_region
+}
+
+variable "aws_region" {
+  type    = string
+  default = "us-east-1"
+}
+
+# TODO: add aws_s3_bucket and related resources per README
